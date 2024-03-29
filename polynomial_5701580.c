@@ -8,7 +8,19 @@ typedef struct {
 
 polynomial poly_mult(polynomial A, polynomial B) {
 	polynomial C;
-
+	int Apos = 0, Bpos = 0, Cpos = 0;
+	int degree_a = A.degree;
+	int degree_b = B.degree;
+	int i, j;
+	
+	C.degree = A.degree + B.degree;
+	for (i = 0; i <= C.degree; i++)
+		C.coef[i] = 0;
+	for (i = A.degree; i >= 0; i--)
+		for (j = B.degree; j >= 0; j--)
+			C.coef[C.degree-(i + j)] += A.coef[A.degree - i] * B.coef[B.degree - j];
+	
+	return C;
 }
 void print_poly(polynomial p) {
 	for (int i = p.degree; i > 0; i--)
