@@ -29,8 +29,8 @@ void print_poly(polynomial p) {
 }
 
 int main(void) {
-	polynomial a = { 3, { 4, 3, 2, 1 } };
-	polynomial b = { 2, { 3 ,2 ,8 } };
+	polynomial a = { 6, { 7, 0, 0, 5, 9, 0, 1 } };
+	polynomial b = { 3, { 5, 2, 1, 10 } };
 	polynomial c;
 
 	print_poly(a);
